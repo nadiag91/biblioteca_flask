@@ -17,7 +17,7 @@ def consulta_idlibros():
             respuesta = list(session.query(Libro).filter(Libro.id == value))    
             nombre_libro = respuesta[0].nombre                
             if len(respuesta) != 0:
-                return make_response(jsonify({'Respond': 'El nombre del libro es' + nombre_libro }), 200)
+                return make_response(jsonify({'Respond': 'El nombre del libro es: ' + nombre_libro }), 200)
             else:
                 return make_response(jsonify({'Respond':'Libro no encontrado'}), 400)
         
